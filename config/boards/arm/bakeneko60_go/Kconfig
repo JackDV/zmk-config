@@ -6,3 +6,11 @@ config BOARD_ENABLE_DCDC
     select SOC_DCDC_NRF52X
     default y
     depends on BOARD_BAKENEKO60_GO
+
+config ZMK_PM_SOFT_OFF
+    bool "Soft-off support"
+    depends on HAS_POWEROFF
+    select ZMK_PM
+    select PM_DEVICE
+    select ZMK_PM_DEVICE_SUSPEND_RESUME
+    select POWEROFF
